@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 85vh;
+}
+
+form {
+    display: flex;
+    width: 70vw;
+    gap: 5px;
+    justify-content: center;
+}
+
+input {
+    width: 100vw;
+    height: 40px;
+    align-self: center;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    min-width: 342px;
+    outline: none;
+}
+
+button {
+    background-color: transparent;
+    padding: 10px 0;
+    margin: 10px;
+}
+
+table {
+    max-height: 200px;
+    padding: 20px;
+    justify-content: center;
+    background-color: rgb(151, 124, 89);
+}
