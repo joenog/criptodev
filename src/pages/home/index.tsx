@@ -46,10 +46,10 @@ export function Home() {
                         </td>
 
                         <td className={styles.tdLabel} data-label="Volume">
-                            2Bi
+                            2B
                         </td>
 
-                        <td className={styles.tdLabel} data-label="Mudança 24h">
+                        <td className={styles.tdProfit} data-label="Mudança 24h">
                             <span>+2,19%</span>
                         </td>
 

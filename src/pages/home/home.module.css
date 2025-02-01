@@ -9,9 +9,10 @@
 
 form {
     display: flex;
-    width: 70vw;
+    width: 90vw;
     gap: 5px;
     justify-content: center;
+    padding: 10px;
 }
 
 input {
@@ -33,8 +34,83 @@ button {
 }
 
 table {
-    max-height: 200px;
-    padding: 20px;
-    justify-content: center;
-    background-color: rgb(151, 124, 89);
+    border-collapse: separate;
+    border-spacing: 0 14px;
+    width: 90%;
+    padding: 0;
+    margin: 0;
+}
+
+table, caption {
+    font-size: 1.1em;
+}
+
+.tr {
+
+    background-color: rgb(43, 40, 54);
+}
+
+td:first-child, th:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+td:last-child, th:last-child {
+    border-radius: 0 8px 8px 0px;
+}
+
+table th, table td {
+    padding: 14px;
+    text-align: center;
+}
+
+.tdLabe {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.tdProfit {
+    color: #12f98a;
+}
+
+.tdLoss {
+    color: #f91257;
+}
+
+/* RESPOSIVIDADE TABLE*/
+
+@media screen and ( max-width: 600px){
+    table{
+        border: 0;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+        padding: 0;
+    }
+
+    .tr {
+        border: 1px solid #ddddddec;
+        display: box;
+        margin-bottom: 14px;
+    }
+
+    table td {
+        border-bottom: rgba(128, 128, 128, 0.889);
+        display: block;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+
+        text-transform: uppercase;
+    }
+
 }
