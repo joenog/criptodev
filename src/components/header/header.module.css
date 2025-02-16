@@ -1,11 +1,20 @@
-
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
 }
 
 .logo {
-    max-width: 100px;
+  max-width: 170px;
+  padding: 0px 17px;
+}
+
+.menu {
+  padding: 17px;
+}
+
+.linksMenu {
+  font-weight: bolder;
+  margin: 8px;
 }
