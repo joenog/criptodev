@@ -1,6 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom"; 
 import { useState, useEffect } from "react";
 import { CoinProps } from "../home";
+import Loading from "../../components/loading";
+import '../../components/loading/loading.css';
 
 interface ResponseData {
   data: CoinProps;
@@ -16,6 +18,7 @@ export function Detail() {
   const {cripto} = useParams();
   const navigate = useNavigate();
   const [coin, setCoin] = useState<CoinProps | null >();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch coin data from the API and handle the response
@@ -48,14 +51,24 @@ export function Detail() {
         };
 
         setCoin(resultData);
+        
       } catch (error) {
         console.log(error);
         navigate('/');
       }
     }
     getCoin();
+    setLoading(true);
 
   }, [cripto])
+
+  if (loading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    )
+  }
 
   return (
     <div>

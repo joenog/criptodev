@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './header.module.css';
-import logoCrypto from '../../assets/images/cripto-logo-dev.png';
+import logoCrypto from '../../assets/images/coinana-logo.png';
 
 
 export function Header() {
