@@ -5,14 +5,14 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   font-family:
     'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
     Arial, sans-serif;
   background-color: #18171c;
-  height: 100vh;
-  width: 100vw;
   color: white;
   font-size: 16px;
   margin: 0 auto;
@@ -21,6 +21,14 @@ body {
 button {
   cursor: pointer;
   border: 0;
+}
+
+.tdProfit {
+  color: #12f98a;
+}
+
+.tdLoss {
+  color: #f91257;
 }
 
 a {

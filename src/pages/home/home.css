@@ -2,7 +2,6 @@ body {
   width: 100%;
 }
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -62,6 +61,14 @@ caption {
   font-size: 1.1em;
 }
 
+.content {
+  width: 80%;
+  font-size: 1.2rem;
+  p {
+    margin: 4px 0;
+  }
+}
+
 .tr {
   background-color: #2b2836;
 }
@@ -84,14 +91,6 @@ table td {
 
 .tdLabel {
   font-size: 18px;
-}
-
-.tdProfit {
-  color: #12f98a;
-}
-
-.tdLoss {
-  color: #f91257;
 }
 
 .buttonMore {

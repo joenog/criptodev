@@ -1,0 +1,30 @@
+
+
+.logoName {
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+}
+
+.logoDetail {
+    img {
+        width: 31px;
+        height: 31px;
+        margin: 5px;
+        border-radius: 50%;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #2B2836;
+    box-shadow: 2px 2px 2px black,
+    -2px -2px -2px black;
+}
+

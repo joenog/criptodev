@@ -1,7 +1,9 @@
 import { FormEvent, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
-import styles from './home.module.css';
+import './home.css';
+import Loading from "../../components/loading";
+import '../../components/loading/loading.css';
 
 export interface CoinProps {
     id: string;
@@ -29,6 +31,7 @@ export function Home() {
   const [input, setInput] = useState('');
   const [coins, setCoins] = useState<CoinProps[]>([]);
   const [offset, setOffset] = useState(0);
+  const [loading, setLoading] = useState(true);
  
   const navigate = useNavigate();
 
@@ -65,6 +68,7 @@ export function Home() {
     } catch (error) {
       console.error('Erro ao buscar os dados:', error);
     } 
+    setLoading(false);
   }
     
   // SHOW COINS INFO
@@ -83,11 +87,19 @@ export function Home() {
     setOffset(offset + 10);
   }
 
+   if (loading || !coins) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    )
+  }
+
 return (
-  <main className={styles.container}>
+  <main className="container">
         <form className="form" action="" onSubmit={handleSubmit}>
           <input
-            className={styles.btnSearch}
+            className="btnSearch"
             type="text"
             placeholder="Digite o nome da moeda"
             value={input}
@@ -111,10 +123,10 @@ return (
 
               <tbody>
                 {coins.map((item) => (
-                  <tr key={item.id} className={styles.tr}>
-                    <td className={styles.tdLabel} data-label="Moeda">
-                      <div className={styles.name}>
-                        <img className={styles.logoCoins} 
+                  <tr key={item.id} className="tr">
+                    <td className="tdLabel" data-label="Moeda">
+                      <div className="name">
+                        <img className="logoCoins" 
                         src={`https://assets.coincap.io/assets/icons/${item.symbol.toLowerCase()}@2x.png`} 
                         alt="icon-coin"/>
 
@@ -124,19 +136,19 @@ return (
                       </div>
                     </td>
 
-                    <td className={styles.tdLabel} data-label="Valor Mercado">
+                    <td className="tdLabel" data-label="Valor Mercado">
                       {item.formatedMarket}
                     </td>
 
-                    <td className={styles.tdLabel} data-label="Preço">
+                    <td className="tdLabel" data-label="Preço">
                       {item.formatedPrice}
                     </td>
 
-                    <td className={styles.tdLabel} data-label="Volume">
+                    <td className="tdLabel" data-label="Volume">
                       {item.formatedVolume}
                     </td>
 
-                    <td className={Number(item.changePercent24Hr) > 0 ? styles.tdProfit : styles.tdLoss} data-label="Mudança 24h">
+                    <td className={Number(item.changePercent24Hr) > 0 ? "tdProfit" : "tdLoss"} data-label="Mudança 24h">
                       <span>{Number(item.changePercent24Hr).toFixed(3)}</span>
                     </td>
                   </tr>
@@ -144,7 +156,7 @@ return (
               </tbody>
             </table>
 
-            <button onClick={handleGetMore} className={styles.buttonMore}>
+            <button onClick={handleGetMore} className="buttonMore">
               Mostrar mais
             </button>
           </>
