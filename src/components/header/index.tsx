@@ -12,9 +12,8 @@ export function Header() {
         </Link>
       </div>
       <div className={styles.menu}>
-        <Link className={styles.linksMenu} to={'/'}> home </Link>
         <Link className={styles.linksMenu} to={'/'}> news </Link>
-        <Link className={styles.linksMenu} to={'/'}> about </Link>
+        <Link className={styles.linksMenu} to={'*'}> about </Link>
       </div>
     </header>
   );
